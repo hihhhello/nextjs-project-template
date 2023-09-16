@@ -2,8 +2,8 @@
 
 import { useQuery } from '@tanstack/react-query';
 
-import { apiJsonPlaceholder } from '@/shared/api';
-import { User } from '@/shared/types';
+import { api } from '@/shared/api/api';
+import { User } from '@/shared/types/userTypes';
 
 type UsersTableProps = {
   users: User[];
@@ -12,7 +12,7 @@ type UsersTableProps = {
 export const UsersTable = ({ users: initialUsers }: UsersTableProps) => {
   const { data: users } = useQuery({
     queryKey: ['get-users'],
-    queryFn: apiJsonPlaceholder.users.getUsers,
+    queryFn: api.jsonPlaceholder.users.getUsers,
     initialData: initialUsers,
   });
 

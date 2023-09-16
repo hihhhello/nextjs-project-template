@@ -1,8 +1,8 @@
 import { UsersTable } from '@/features/UsersTable';
-import { apiJsonPlaceholder } from '@/shared/api';
+import { api } from '@/shared/api/api';
 
 export default async function Home() {
-  const users = await apiJsonPlaceholder.users.getUsers();
+  const users = await api.jsonPlaceholder.users.getUsers();
 
   return <UsersTable users={users} />;
 }
