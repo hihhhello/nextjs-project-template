@@ -1,9 +1,11 @@
-import { QueryClientProvider } from '@/features/QueryClientProvider';
 import './globals.css';
 import 'react-toastify/dist/ReactToastify.css';
+
 import type { Metadata } from 'next';
-import { BaseLayout } from '@/app/_ui/BaseLayout';
 import { ToastContainer } from 'react-toastify';
+
+import { QueryClientProvider } from '@/features/QueryClientProvider';
+import { BaseLayout } from '@/app/_ui/BaseLayout';
 
 export const metadata: Metadata = {
   title: 'Nextjs13 Template',
