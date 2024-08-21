@@ -28,33 +28,42 @@ export const NEXT_AUTH_OPTIONS: AuthOptions = {
         /**
          * TODO: uncomment when BE with Auth is added.
          */
-        // const res = await fetch(`${process.env.SERVER_URL}/signin`, {
-        //   method: 'POST',
-        //   body: JSON.stringify({
-        //     password: credentials?.password,
-        //     username: credentials?.username,
-        //   }),
-        //   headers: {
-        //     'Content-Type': 'application/json',
-        //   },
-        // });
-
-        // const user: { accessToken: string } = await res.json();
-
-        // if (res.ok && user) {
-        //   const userInfoResponse = await fetch(`${process.env.SERVER_URL}/me`, {
-        //     method: 'GET',
+        // try {
+        //   const res = await fetch(`${process.env.SERVER_URL}/signin`, {
+        //     method: 'POST',
+        //     body: JSON.stringify({
+        //       password: credentials?.password,
+        //       username: credentials?.username,
+        //     }),
         //     headers: {
         //       'Content-Type': 'application/json',
-        //       Authorization: `Bearer ${user.accessToken}`,
         //     },
         //   });
 
-        //   const userInfo: { email: string; id: string } =
-        //     await userInfoResponse.json();
+        //   const user: { accessToken: string } = await res.json();
 
-        //   return { ...user, ...userInfo };
-        // } else {
+        //   if (res.ok && user) {
+        //     const userInfoResponse = await fetch(
+        //       `${process.env.SERVER_URL}/me`,
+        //       {
+        //         method: 'GET',
+        //         headers: {
+        //           'Content-Type': 'application/json',
+        //           Authorization: `Bearer ${user.accessToken}`,
+        //         },
+        //       },
+        //     );
+
+        //     const userInfo: { email: string; id: string } =
+        //       await userInfoResponse.json();
+
+        //     return { ...user, ...userInfo };
+        //   } else {
+        //     return null;
+        //   }
+        // } catch (error) {
+        //   console.log('Next Auth Error:', error);
+
         //   return null;
         // }
       },
