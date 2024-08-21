@@ -18,9 +18,9 @@ export const NEXT_AUTH_OPTIONS: AuthOptions = {
       async authorize(credentials) {
         const templateUser = {
           password: credentials?.password,
-          username: credentials?.username,
-          id: '1',
-          accessToken: 'my.token.secret',
+          email: credentials?.username ?? 'user@gmail.com',
+          id: 1,
+          access_token: 'my.token.secret',
         };
 
         return templateUser;
@@ -62,10 +62,14 @@ export const NEXT_AUTH_OPTIONS: AuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      return { ...token, ...user };
+      if (user) {
+        token.access_token = user.access_token;
+        token.id = Number(user.id);
+      }
+
+      return token;
     },
     async session({ session, token }) {
-      // @ts-ignore
       session.user = token;
 
       return session;
