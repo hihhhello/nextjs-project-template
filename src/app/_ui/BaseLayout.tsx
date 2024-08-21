@@ -14,6 +14,20 @@ export const BaseLayout = async ({ children }: BaseLayoutProps) => {
   const isSignedInUser = Boolean(session?.user);
 
   /**
+   * Use this layout if you don't need responsive scrolling.
+   * TODO: Remove this comment.
+   */
+  // return (
+  //   <div className="min-h-full">
+  //     <div className="py-10">
+  //       <main>
+  //         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">{children}</div>
+  //       </main>
+  //     </div>
+  //   </div>
+  // );
+
+  /**
    * Layout is created for max responsiveness. Adjust spacing and padding as per your design.
    * h-full, flex + flex-grow, overflow-hidden are used to make responsive scrolling without setting fixed height for containers.
    * TODO: Remove this comment.
