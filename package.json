@@ -18,6 +18,7 @@
     "axios": "^1.6.7",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.1.0",
+    "hihhhello-utils": "^0.0.16",
     "lodash": "^4.17.21",
     "next": "14.1.0",
     "next-auth": "^4.24.5",
