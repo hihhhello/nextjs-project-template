@@ -3,7 +3,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { BaseLayout } from '@/app/_ui/BaseLayout';
-import { QueryClientProvider } from '@/features/QueryClientProvider';
+import { NextAuthProvider } from '@/providers/NextAuthProvider';
+import { QueryClientProvider } from '@/providers/QueryClientProvider';
 
 import './globals.css';
 
@@ -21,9 +22,11 @@ export default function RootLayout({
     <html className="h-full" lang="en">
       <body className="h-full">
         <QueryClientProvider>
-          <ToastContainer />
+          <NextAuthProvider>
+            <ToastContainer />
 
-          <BaseLayout>{children}</BaseLayout>
+            <BaseLayout>{children}</BaseLayout>
+          </NextAuthProvider>
         </QueryClientProvider>
       </body>
     </html>
